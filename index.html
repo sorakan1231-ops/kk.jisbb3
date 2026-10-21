@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>ブロスタ増殖ゲーム</title>
+
+<style>
+html, body {
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  font-family: sans-serif;
+  background: #fff8df;
+}
+
+h1 {
+  color: #e63946;
+}
+
+button {
+  position: sticky;
+  top: 10px;
+  z-index: 10;
+  padding: 16px 24px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  background: #ff8c00;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+#count {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+#area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.brawl {
+  padding: 8px 12px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ffe066;
+  border: 2px solid #ffbd00;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+</style>
+</head>
+<body>
+
+<h1>ブロスタ増殖ゲーム</h1>
+<button id="addButton">ブロスタを増やす！</button>
+<div id="count">ブロスタ：0個</div>
+<div id="area"></div>
+
+<script>
+const area = document.getElementById("area");
+const count = document.getElementById("count");
+const button = document.getElementById("addButton");
+
+let total = 0;
+
+button.addEventListener("click", () => {
+  const word = document.createElement("span");
+  word.className = "brawl";
+  word.textContent = "ブロスタ";
+
+  area.appendChild(word);
+  total++;
+
+  count.textContent = `ブロスタ：${total}個`;
+});
+</script>
+
+</body>
+</html>
